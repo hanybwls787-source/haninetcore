@@ -3,18 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint"
-},
-
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
-    "baseline-browser-map": "^1.0.0",
     "@emailjs/browser": "^4.4.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.0.0",
-    "emailjs-com": "@emailjs/browser@^4.0.2",
     "framer-motion": "^12.23.26",
     "lucide-react": "^0.562.0",
     "next": "latest",
