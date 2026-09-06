@@ -43,7 +43,7 @@ export default function Footer() {
 
           <motion.a
             whileHover={{ scale: 1.2 }}
-            href="https://www.linkedin.com/in/hani-bullus-77a913304/"
+            href="https://www.linkedin.com/in/hani-bullus-19b03b354/"
             target="_blank"
             className="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition"
           >

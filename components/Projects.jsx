@@ -55,13 +55,13 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative px-6 py-24 bg-slate-50 dark:bg-black overflow-hidden"
+      className="relative px-6 py-24 bg-white overflow-hidden"
     >
       {/* Animated background circles */}
       {circles.map((circle, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-bold-400 opacity-20"
+          className="absolute rounded-full bg-yellow-300 opacity-25 pointer-events-none"
           style={{
             width: circle.size,
             height: circle.size,
@@ -69,8 +69,8 @@ export default function Projects() {
             left: circle.left,
           }}
           animate={{
-            y: ["20%", "20%", "20%"],
-            x: ["20%", "15%", "-10%", "20%"],
+            y: ["0%", "20%", "0%"],
+            x: ["0%", "-10%", "10%", "0%"],
           }}
           transition={{
             duration: circle.duration,
@@ -88,10 +88,10 @@ export default function Projects() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-white dark:text-white">
-          Achievements & Projects
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-neutral-900">
+          Achievements & <span className="text-gradient-yellow">Projects</span>
         </h2>
-        <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+        <p className="text-neutral-500 max-w-2xl mx-auto">
           A selection of projects that demonstrate my skills in
           full-stack web development and modern UI design.
         </p>

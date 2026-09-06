@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
+import {
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiReact,
+  SiDotnet,
+} from "react-icons/si";
+import { KeyRound, ShieldCheck, LockKeyhole } from "lucide-react";
 
 export default function About() {
   const sectionRef = useRef(null);
@@ -68,30 +76,35 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="bg-black text-white px-4 py-20"
+      className="bg-white text-neutral-900 px-4 py-24 overflow-hidden"
     >
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-
         {/* ABOUT */}
-        <div className="bg-slate-900 p-6 rounded-2xl shadow-xl">
-          <h2 className="text-2xl font-bold mb-4">About Me</h2>
+        <div
+          className={`bg-white p-6 rounded-2xl shadow-xl border border-yellow-100 ${
+            animate ? "animate-fade-in-up" : "opacity-0"
+          }`}
+        >
+          <h2 className="text-2xl font-bold mb-4">
+            About <span className="text-gradient-yellow">Me</span>
+          </h2>
 
-          <p className="text-slate-400 leading-relaxed mb-6">
-            Hello! I'm <span className="font-semibold">Hani Boulos</span>, a
-            Full-Stack Developer specializing in
-            <span className="text-primary"> ASP.NET Core & React</span>.
+          <p className="text-neutral-600 leading-relaxed mb-6">
+            Hello! I'm <span className="font-semibold text-neutral-900">Hani Boulos</span>, a
+            Full-Stack Developer specializing in{" "}
+            <span className="text-primary font-semibold">ASP.NET Core & React</span>.
           </p>
 
           {/* SKILLS */}
-          <div className="space-y-4">
-            <Skill name="HTML" percent={96} color="bg-orange-500" animate={animate} />
-            <Skill name="CSS" percent={95} color="bg-blue-500" animate={animate} />
-            <Skill name="JavaScript" percent={85} color="bg-yellow-500" animate={animate} />
-            <Skill name="React" percent={80} color="bg-cyan-500" animate={animate} />
-            <Skill name="ASP.NET Core" percent={80} color="bg-purple-600" animate={animate} />
-            <Skill name="JWT" percent={86} color="bg-indigo-500" animate={animate} />
-            <Skill name="Authentication" percent={75} color="bg-green-500" animate={animate} />
-            <Skill name="Authorization" percent={80} color="bg-pink-500" animate={animate} />
+          <div className="space-y-5">
+            <Skill icon={<SiHtml5 />} name="HTML" percent={96} animate={animate} delay={0} />
+            <Skill icon={<SiCss />} name="CSS" percent={95} animate={animate} delay={80} />
+            <Skill icon={<SiJavascript />} name="JavaScript" percent={85} animate={animate} delay={160} />
+            <Skill icon={<SiReact />} name="React" percent={80} animate={animate} delay={240} />
+            <Skill icon={<SiDotnet />} name="ASP.NET Core" percent={80} animate={animate} delay={320} />
+            <Skill icon={<KeyRound size={18} />} name="JWT" percent={86} animate={animate} delay={400} />
+            <Skill icon={<ShieldCheck size={18} />} name="Authentication" percent={75} animate={animate} delay={480} />
+            <Skill icon={<LockKeyhole size={18} />} name="Authorization" percent={80} animate={animate} delay={560} />
           </div>
 
           {/* DOWNLOAD CV */}
@@ -99,12 +112,12 @@ export default function About() {
             href="/cv-hani.pdf"
             download
             className="
-              mt-8 inline-block w-full text-center
-              bg-gradient-to-r from-purple-600 to-indigo-600
-              text-white py-3 rounded-xl
+              mt-8 inline-flex items-center justify-center gap-2 w-full text-center
+              bg-primary hover:bg-primary-hover
+              text-neutral-900 py-3 rounded-xl
               font-bold text-lg
-              hover:scale-105 hover:shadow-xl
-              transition
+              transition-all duration-300
+              hover:scale-[1.02] hover:shadow-lg hover:shadow-yellow-200
             "
           >
             Get my CV 📄
@@ -113,14 +126,18 @@ export default function About() {
 
         {/* CONTACT + CERTIFICATE */}
         <div className="space-y-6">
-
           {/* CONTACT FORM */}
-          <div className="bg-slate-900 p-6 rounded-2xl shadow-xl">
+          <div
+            className={`bg-white p-6 rounded-2xl shadow-xl border border-yellow-100 ${
+              animate ? "animate-fade-in-up" : "opacity-0"
+            }`}
+            style={{ animationDelay: "150ms" }}
+          >
             <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
 
             <form
               onSubmit={sendEmail}
-              className="space-y-4 border border-slate-700 rounded-xl p-5 bg-slate-800"
+              className="space-y-4 border border-neutral-200 rounded-xl p-5 bg-neutral-50"
             >
               <input
                 type="text"
@@ -128,7 +145,7 @@ export default function About() {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-slate-700 text-white"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-neutral-200 text-neutral-900 outline-none focus:border-primary focus:ring-2 focus:ring-yellow-200 transition"
                 required
               />
 
@@ -138,7 +155,7 @@ export default function About() {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-slate-700 text-white"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-neutral-200 text-neutral-900 outline-none focus:border-primary focus:ring-2 focus:ring-yellow-200 transition"
                 required
               />
 
@@ -148,7 +165,7 @@ export default function About() {
                 rows="4"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-slate-700 text-white"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-neutral-200 text-neutral-900 outline-none focus:border-primary focus:ring-2 focus:ring-yellow-200 transition"
                 required
               />
 
@@ -156,25 +173,25 @@ export default function About() {
                 disabled={loading}
                 className="
                   w-full
-                  bg-gradient-to-r from-indigo-600 to-purple-600
-                  text-white py-3 rounded-xl
+                  bg-primary hover:bg-primary-hover
+                  text-neutral-900 py-3 rounded-xl
                   font-bold text-lg
-                  border border-indigo-400
-                  hover:scale-105 hover:shadow-xl
-                  transition
+                  transition-all duration-300
+                  hover:scale-[1.02] hover:shadow-lg hover:shadow-yellow-200
+                  disabled:opacity-60 disabled:hover:scale-100
                 "
               >
                 {loading ? "Sending..." : "Send Message 🚀"}
               </button>
 
               {status === "success" && (
-                <p className="text-green-500 text-center mt-2">
+                <p className="text-green-600 text-center mt-2 animate-fade-in">
                   Message sent successfully ✅
                 </p>
               )}
 
               {status === "error" && (
-                <p className="text-red-500 text-center mt-2">
+                <p className="text-red-600 text-center mt-2 animate-fade-in">
                   Something went wrong ❌
                 </p>
               )}
@@ -182,11 +199,16 @@ export default function About() {
           </div>
 
           {/* CERTIFICATE */}
-          <div className="bg-slate-900 p-6 rounded-2xl shadow-xl text-center">
+          <div
+            className={`bg-white p-6 rounded-2xl shadow-xl border border-yellow-100 text-center ${
+              animate ? "animate-fade-in-up" : "opacity-0"
+            }`}
+            style={{ animationDelay: "300ms" }}
+          >
             <img
               src="/haaaan.png"
               alt="My Certificate"
-              className="mx-auto mb-4 w-48 h-auto rounded-lg shadow-md"
+              className="mx-auto mb-4 w-48 h-auto rounded-lg shadow-md animate-float"
             />
 
             <a
@@ -195,38 +217,44 @@ export default function About() {
               rel="noopener noreferrer"
               className="
                 inline-block
-                bg-gradient-to-r from-green-500 to-emerald-600
-                text-white px-6 py-3 rounded-xl
+                bg-primary hover:bg-primary-hover
+                text-neutral-900 px-6 py-3 rounded-xl
                 font-bold
-                border border-green-400
-                hover:scale-105 hover:shadow-xl
-                transition
+                transition-all duration-300
+                hover:scale-105 hover:shadow-lg hover:shadow-yellow-200
               "
             >
               View Certificate 📜
             </a>
           </div>
-
         </div>
       </div>
     </section>
   );
 }
 
-/* SKILL BAR */
-function Skill({ name, percent, color, animate }) {
+/* SKILL BAR مع أيقونة */
+function Skill({ icon, name, percent, animate, delay = 0 }) {
   return (
-    <div>
-      <div className="flex justify-between mb-1">
-        <span className="font-medium">{name}</span>
-        <span className="text-sm text-slate-400">{percent}%</span>
+    <div
+      className={animate ? "animate-fade-in-up" : "opacity-0"}
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      <div className="flex items-center justify-between mb-1.5">
+        <span className="flex items-center gap-2 font-medium text-neutral-800">
+          <span className="text-primary-hover flex items-center justify-center w-6 h-6 rounded-md bg-yellow-50">
+            {icon}
+          </span>
+          {name}
+        </span>
+        <span className="text-sm text-neutral-500">{percent}%</span>
       </div>
-      <div className="w-full bg-slate-700 rounded-full h-3">
+      <div className="w-full bg-neutral-100 rounded-full h-3 overflow-hidden">
         <div
-          className={`${color} h-3 rounded-full transition-all duration-1000`}
+          className="h-3 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 transition-all duration-1000 ease-out"
           style={{ width: animate ? `${percent}%` : "0%" }}
         ></div>
       </div>
     </div>
   );
-}
+};
