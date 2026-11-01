@@ -5,39 +5,39 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
-    title: "E-commerce Platform",
-    desc: "A full-featured e-commerce system with shopping cart, user authentication, and order management.",
+    title: "Pharmacy System",
+    desc: "A pharmacy inventory management system that tracks sales, purchases, stock levels, and product expiry dates.",
     tech: ["ASP.NET Core", "React", "SQL Server", "Tailwind CSS"],
     img: "nor.png",
   },
   {
-    title: "Word guessing game",
+    title: "Clothing store",
     desc: "A task management tool to track projects, deadlines, and team collaboration efficiently.",
-    tech: ["C#", "SQL Server", "Entity Framework", "Bootstrap"],
-    img: "poto2.jpg",
+    tech: ["React", "Next.js", "Bootstrap"],
+    img: "poto2.png",
   },
   {
-    title: "Mina The Artist Platform",
-    desc: "A modern portfolio platform for artists to showcase their work with responsive UI and animations.",
-    tech: ["React", "Next.js", "Framer Motion", "Tailwind CSS"],
-    img: "poto4.jpg",
+    title: "Supermarket store",
+    desc: "A full-featured e-commerce system Supermarket with shopping cart, user authentication, and order management.",
+    tech: ["React", "Next.js", "Bootstrap", "Tailwind CSS"],
+    img: "poto4.png",
   },
   {
     title: "Clothing marketing website",
-    desc: "Interactive data dashboard showing real-time metrics with dynamic charts and filters.",
-    tech: ["React", "Chart.js", "REST API", "Tailwind CSS"],
+    desc: "An online store selling products such as clothing, bags, and footwear for men and women.",
+    tech: ["React", "Next.js", "Tailwind CSS"],
     img: "num.png",
   },
   {
     title: "Restaurant orders",
-    desc: "Basic charts and analytics for learning visualization techniques in JavaScript.",
-    tech: ["JavaScript", "HTML", "CSS", "Chart.js"],
+    desc: "A restaurant order management system: customers place orders, view order details, and provide their address, while the restaurant receives and tracks each customer's order.",
+    tech: ["JavaScript", "HTML", "CSS", "Next.js"],
     img: "level1.png",
   },
   {
-    title: "Restaurant food",
+    title: "A system for managing clinic appointments for patients and nursing staff.",
     desc: "Advanced charts with animations, filtering, and dynamic UI interactions.",
-    tech: ["JavaScript", "D3.js", "CSS Animations", "HTML"],
+    tech: ["React", "Next.js", "ASP.NET Core", "SQL Server"],
     img: "level2.png",
   },
 ];
@@ -55,7 +55,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative px-6 py-24 bg-white overflow-hidden"
+      className="relative px-6 py-24 bg-white dark:bg-neutral-950 overflow-hidden transition-colors duration-300"
     >
       {/* Animated background circles */}
       {circles.map((circle, i) => (
@@ -88,10 +88,10 @@ export default function Projects() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-neutral-900">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-neutral-900 dark:text-neutral-100">
           Achievements & <span className="text-gradient-yellow">Projects</span>
         </h2>
-        <p className="text-neutral-500 max-w-2xl mx-auto">
+        <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
           A selection of projects that demonstrate my skills in
           full-stack web development and modern UI design.
         </p>

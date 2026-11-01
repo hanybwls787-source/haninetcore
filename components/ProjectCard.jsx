@@ -7,7 +7,7 @@ export default function ProjectCard({ title, desc, tech, img }) {
   return (
     <div
       className="
-        bg-white rounded-2xl shadow-lg border border-yellow-100
+        bg-white dark:bg-neutral-900 rounded-2xl shadow-lg border border-yellow-100 dark:border-neutral-800
         overflow-hidden p-6
         hover:-translate-y-2 hover:shadow-2xl hover:shadow-yellow-200 hover:border-primary
         transition-all duration-300
@@ -21,14 +21,14 @@ export default function ProjectCard({ title, desc, tech, img }) {
         />
       </div>
 
-      <h3 className="text-xl font-bold text-neutral-900 mb-2">{title}</h3>
-      <p className="text-neutral-600 mb-4 text-sm leading-relaxed">{desc}</p>
+      <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">{title}</h3>
+      <p className="text-neutral-600 dark:text-neutral-300 mb-4 text-sm leading-relaxed">{desc}</p>
 
       <div className="flex flex-wrap gap-2 mb-5">
         {tech.map((t, i) => (
           <span
             key={i}
-            className="bg-yellow-50 text-primary-hover text-xs font-semibold px-3 py-1 rounded-full border border-yellow-200"
+            className="bg-yellow-50 dark:bg-yellow-950/50 text-primary-hover dark:text-yellow-300 text-xs font-semibold px-3 py-1 rounded-full border border-yellow-200 dark:border-yellow-800"
           >
             {t}
           </span>

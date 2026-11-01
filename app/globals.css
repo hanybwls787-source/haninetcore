@@ -1,9 +1,10 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   /* الخلفية والنص الأساسي */
   --background: #fcfcfc;
-  --foreground: #f5f5f0;
+  --foreground: #171717;
 
   /* باليت الأصفر */
   --color-primary: #facc15;      /* أصفر أساسي (Yellow 400) */
@@ -12,9 +13,18 @@
   --color-primary-light: #fef9c3; /* أصفر فاتح جداً للنصوص على خلفية غامقة (Yellow 100) */
   --color-accent: #fde047;        /* أصفر متوسط للتفاصيل (Yellow 300) */
 
-  --color-surface: #141414;       /* خلفية الكروت */
-  --color-surface-light: #1f1f1f; /* خلفية كروت أفتح شوية */
-  --color-border: #2a2a2a;        /* لون الحدود */
+  --color-surface: #ffffff;
+  --color-surface-light: #f8fafc;
+  --color-border: #e5e7eb;
+}
+
+/* Dark mode styles */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
+  --color-surface: #141414;
+  --color-surface-light: #1f1f1f;
+  --color-border: #2a2a2a;
 }
 
 @theme inline {
@@ -40,12 +50,31 @@ html, body {
 }
 
 /* ===== Hero Section ===== */
+/* الموبايل: الارتفاع مرن عشان المحتوى كله (الصورة + الكلام) يظهر بالكامل */
 #home {
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
 }
 
 .after-hero {
-  margin-top: 100vh;
+  margin-top: 0;
+}
+
+/* الشاشات الكبيرة: نفس الشكل القديم بالظبط */
+@media (min-width: 768px) {
+  #home {
+    height: 100vh;
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .after-hero {
+    margin-top: 100vh;
+  }
 }
 
 /* ===== Selection & Scrollbar بلمسة أصفر ===== */

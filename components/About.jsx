@@ -76,12 +76,12 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="bg-white text-neutral-900 px-4 py-24 overflow-hidden"
+      className="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 px-4 py-24 overflow-hidden transition-colors duration-300"
     >
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
         {/* ABOUT */}
         <div
-          className={`bg-white p-6 rounded-2xl shadow-xl border border-yellow-100 ${
+          className={`bg-white dark:bg-neutral-900 p-6 rounded-2xl shadow-xl border border-yellow-100 dark:border-neutral-800 ${
             animate ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
@@ -89,8 +89,8 @@ export default function About() {
             About <span className="text-gradient-yellow">Me</span>
           </h2>
 
-          <p className="text-neutral-600 leading-relaxed mb-6">
-            Hello! I'm <span className="font-semibold text-neutral-900">Hani Boulos</span>, a
+          <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-6">
+            Hello! I'm <span className="font-semibold text-neutral-900 dark:text-neutral-100">Hani Boulos</span>, a
             Full-Stack Developer specializing in{" "}
             <span className="text-primary font-semibold">ASP.NET Core & React</span>.
           </p>
@@ -125,10 +125,10 @@ export default function About() {
         </div>
 
         {/* CONTACT + CERTIFICATE */}
-        <div className="space-y-6">
+          <div className="space-y-6">
           {/* CONTACT FORM */}
           <div
-            className={`bg-white p-6 rounded-2xl shadow-xl border border-yellow-100 ${
+            className={`bg-white dark:bg-neutral-900 p-6 rounded-2xl shadow-xl border border-yellow-100 dark:border-neutral-800 ${
               animate ? "animate-fade-in-up" : "opacity-0"
             }`}
             style={{ animationDelay: "150ms" }}
@@ -137,7 +137,7 @@ export default function About() {
 
             <form
               onSubmit={sendEmail}
-              className="space-y-4 border border-neutral-200 rounded-xl p-5 bg-neutral-50"
+              className="space-y-4 border border-neutral-200 dark:border-neutral-700 rounded-xl p-5 bg-neutral-50 dark:bg-neutral-800"
             >
               <input
                 type="text"
@@ -145,7 +145,7 @@ export default function About() {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-white border border-neutral-200 text-neutral-900 outline-none focus:border-primary focus:ring-2 focus:ring-yellow-200 transition"
+                className="w-full px-4 py-3 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 outline-none focus:border-primary focus:ring-2 focus:ring-yellow-200 transition"
                 required
               />
 
@@ -155,7 +155,7 @@ export default function About() {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-white border border-neutral-200 text-neutral-900 outline-none focus:border-primary focus:ring-2 focus:ring-yellow-200 transition"
+                className="w-full px-4 py-3 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 outline-none focus:border-primary focus:ring-2 focus:ring-yellow-200 transition"
                 required
               />
 
@@ -165,7 +165,7 @@ export default function About() {
                 rows="4"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-white border border-neutral-200 text-neutral-900 outline-none focus:border-primary focus:ring-2 focus:ring-yellow-200 transition"
+                className="w-full px-4 py-3 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 outline-none focus:border-primary focus:ring-2 focus:ring-yellow-200 transition"
                 required
               />
 
@@ -200,7 +200,7 @@ export default function About() {
 
           {/* CERTIFICATE */}
           <div
-            className={`bg-white p-6 rounded-2xl shadow-xl border border-yellow-100 text-center ${
+            className={`bg-white dark:bg-neutral-900 p-6 rounded-2xl shadow-xl border border-yellow-100 dark:border-neutral-800 text-center ${
               animate ? "animate-fade-in-up" : "opacity-0"
             }`}
             style={{ animationDelay: "300ms" }}
@@ -213,6 +213,27 @@ export default function About() {
 
             <a
               href="/haaaan.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                inline-block
+                bg-primary hover:bg-primary-hover
+                text-neutral-900 px-6 py-3 rounded-xl
+                font-bold
+                transition-all duration-300
+                hover:scale-105 hover:shadow-lg hover:shadow-yellow-200
+              "
+            >
+              View Certificate 📜
+            </a>
+            <img
+              src="/num1.png"
+              alt="My Certificate"
+              className="mx-auto mb-4 w-48 h-auto rounded-lg shadow-md animate-float"
+            />
+
+               <a
+              href="/num1.png"
               target="_blank"
               rel="noopener noreferrer"
               className="
@@ -241,15 +262,15 @@ function Skill({ icon, name, percent, animate, delay = 0 }) {
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className="flex items-center justify-between mb-1.5">
-        <span className="flex items-center gap-2 font-medium text-neutral-800">
-          <span className="text-primary-hover flex items-center justify-center w-6 h-6 rounded-md bg-yellow-50">
+        <span className="flex items-center gap-2 font-medium text-neutral-800 dark:text-neutral-200">
+          <span className="text-primary-hover flex items-center justify-center w-6 h-6 rounded-md bg-yellow-50 dark:bg-yellow-950/50">
             {icon}
           </span>
           {name}
         </span>
-        <span className="text-sm text-neutral-500">{percent}%</span>
+        <span className="text-sm text-neutral-500 dark:text-neutral-400">{percent}%</span>
       </div>
-      <div className="w-full bg-neutral-100 rounded-full h-3 overflow-hidden">
+      <div className="w-full bg-neutral-100 dark:bg-neutral-800 rounded-full h-3 overflow-hidden">
         <div
           className="h-3 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 transition-all duration-1000 ease-out"
           style={{ width: animate ? `${percent}%` : "0%" }}

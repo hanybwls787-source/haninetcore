@@ -10,6 +10,7 @@ import {
   SiTailwindcss,
   SiDotnet,
   SiSharp,
+  SiBootstrap,
 } from "react-icons/si";
 import { Webhook, Database, Palette, Server } from "lucide-react";
 
@@ -19,6 +20,7 @@ const frontend = [
   { name: "JavaScript", icon: <SiJavascript /> },
   { name: "React", icon: <SiReact /> },
   { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+  { name: "Bootstrap", icon: <SiBootstrap /> },
 ];
 
 const backend = [
@@ -31,7 +33,7 @@ const backend = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-6 py-20 bg-white">
+    <section id="skills" className="px-6 py-20 bg-white dark:bg-neutral-950 transition-colors duration-300">
       {/* TITLE */}
       <motion.div
         className="text-center mb-14"
@@ -40,10 +42,10 @@ export default function Skills() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl font-extrabold mb-2 text-neutral-900">
+        <h2 className="text-3xl font-extrabold mb-2 text-neutral-900 dark:text-neutral-100">
           Technical <span className="text-gradient-yellow">Skills</span>
         </h2>
-        <p className="text-neutral-500">
+        <p className="text-neutral-500 dark:text-neutral-400">
           Technologies I use to build modern web applications
         </p>
       </motion.div>
@@ -52,8 +54,8 @@ export default function Skills() {
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
         {/* FRONTEND */}
         <motion.div
-          className="group bg-white p-8 rounded-2xl
-                     border border-yellow-100
+          className="group bg-white dark:bg-neutral-900 p-8 rounded-2xl
+                     border border-yellow-100 dark:border-neutral-800
                      hover:border-primary hover:shadow-xl hover:shadow-yellow-100
                      transition-all duration-300"
           initial={{ opacity: 0, y: 40 }}
@@ -61,7 +63,7 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-xl font-bold mb-6 flex items-center gap-3 text-neutral-900">
+          <h3 className="text-xl font-bold mb-6 flex items-center gap-3 text-neutral-900 dark:text-neutral-100">
             <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-yellow-50 text-primary-hover">
               <Palette size={20} />
             </span>
@@ -76,10 +78,10 @@ export default function Skills() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 viewport={{ once: true }}
-                className="flex items-center gap-2 bg-neutral-50
+                className="flex items-center gap-2 bg-neutral-50 dark:bg-neutral-800
                            border border-transparent
                            px-4 py-2.5 rounded-lg text-sm font-medium
-                           text-neutral-800 justify-center
+                           text-neutral-800 dark:text-neutral-200 justify-center
                            group-hover:border-yellow-200
                            hover:scale-105 hover:bg-yellow-50 hover:!border-primary
                            transition-all duration-300"
@@ -93,8 +95,8 @@ export default function Skills() {
 
         {/* BACKEND */}
         <motion.div
-          className="group bg-white p-8 rounded-2xl
-                     border border-yellow-100
+          className="group bg-white dark:bg-neutral-900 p-8 rounded-2xl
+                     border border-yellow-100 dark:border-neutral-800
                      hover:border-primary hover:shadow-xl hover:shadow-yellow-100
                      transition-all duration-300"
           initial={{ opacity: 0, y: 40 }}
@@ -102,7 +104,7 @@ export default function Skills() {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-xl font-bold mb-6 flex items-center gap-3 text-neutral-900">
+          <h3 className="text-xl font-bold mb-6 flex items-center gap-3 text-neutral-900 dark:text-neutral-100">
             <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-yellow-50 text-primary-hover">
               <Server size={20} />
             </span>
@@ -117,10 +119,10 @@ export default function Skills() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 viewport={{ once: true }}
-                className="flex items-center gap-2 bg-neutral-50
+                className="flex items-center gap-2 bg-neutral-50 dark:bg-neutral-800
                            border border-transparent
                            px-4 py-2.5 rounded-lg text-sm font-medium
-                           text-neutral-800 justify-center
+                           text-neutral-800 dark:text-neutral-200 justify-center
                            group-hover:border-yellow-200
                            hover:scale-105 hover:bg-yellow-50 hover:!border-primary
                            transition-all duration-300"

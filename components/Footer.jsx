@@ -11,7 +11,7 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="border-t border-slate-200 dark:border-slate-800 py-10 px-4"
+      className="border-t border-slate-200 dark:border-slate-800 py-10 px-4 bg-white dark:bg-neutral-950 transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row gap-6 justify-between items-center text-center sm:text-left">
 

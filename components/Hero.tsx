@@ -163,24 +163,27 @@ export default function Hero() {
           </div>
 
           {/* RIGHT: IMAGE + NAME */}
-          <div className="order-1 md:order-2 flex flex-col items-center">
+          <div className="order-1 md:order-2 flex flex-col items-center w-full">
             {/* IMAGE + ORBITING TECH ICONS */}
-            <div className="relative w-64 h-64 md:w-72 md:h-72 mx-auto mb-6">
-              <motion.img
-                src="/sele.png"
-                alt="Hani Boulos"
-                className="absolute inset-0 m-auto w-44 h-44 md:w-52 md:h-52 object-cover rounded-2xl border-4 border-primary shadow-2xl shadow-yellow-500/30 animate-float"
-                initial={{ scale: 0.7, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.6 }}
-              />
+            <div className="relative shrink-0 w-64 h-64 md:w-72 md:h-72 mx-auto mb-6">
+              {/* الصورة: الـ float على div لوحده والـ scale على الصورة */}
+              <div className="absolute inset-0 m-auto w-44 h-44 md:w-52 md:h-52 z-10 animate-float">
+                <motion.img
+                  src="/sele.png"
+                  alt="Hani Boulos"
+                  className="block w-full h-full object-cover rounded-2xl border-4 border-primary shadow-2xl shadow-yellow-500/30"
+                  initial={{ scale: 0.7, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                />
+              </div>
 
               {/* Glow ring behind the image */}
               <div className="absolute inset-0 m-auto w-44 h-44 md:w-52 md:h-52 rounded-2xl animate-glow-pulse pointer-events-none" />
 
               {/* Rotating orbit */}
               <motion.div
-                className="absolute inset-0"
+                className="absolute inset-0 pointer-events-none"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
               >
@@ -198,7 +201,11 @@ export default function Hero() {
                         className="w-11 h-11 -mt-[22px] -ml-[22px] flex items-center justify-center bg-white rounded-full shadow-lg text-xl"
                         style={{ color: tech.color }}
                         animate={{ rotate: -360 }}
-                        transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+                        transition={{
+                          duration: 22,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
                       >
                         {tech.icon}
                       </motion.div>
